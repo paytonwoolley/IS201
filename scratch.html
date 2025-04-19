@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explore America's National Parks</title>
+  <link rel="stylesheet" href="#scratch.css" />
+</head>
+<body>
+
+  <div id="top" class="header">
+    <h1>Discover America's National Parks 🏞️</h1>
+    <p class="subtitle">Wilderness. Wildlife. Wonder.</p>
+    <nav>
+      <a href="#gallery">Gallery</a> |
+      <a href="#video">Watch</a> |
+      <a href="#tableau">Data</a> |
+      <a href="professional.html">Back to Professional Site</a>
+    </nav>
+  </div>
+
+  <div class="content">
+    <h2>Top 3 Reasons to Visit National Parks</h2>
+    <ol>
+      <li>Natural Beauty
+        <ul>
+          <li>Grand landscapes</li>
+          <li>Sunsets & stargazing</li>
+        </ul>
+      </li>
+      <li>Adventure Activities
+        <ul>
+          <li>Hiking trails</li>
+          <li>Camping & kayaking</li>
+        </ul>
+      </li>
+      <li>Wildlife Conservation
+        <ul>
+          <li>Protected species</li>
+          <li>Education programs</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="gallery-section" id="gallery">
+    <h2>National Park Gallery</h2>
+    <img src="https://www.nps.gov/common/uploads/structured_data/3C7DCBC8-1DD8-B71B-0BEA2A6D0D30790F.jpg" alt="Yosemite" class="park-img" />
+    <img src="https://www.nps.gov/common/uploads/structured_data/3C7DE27D-1DD8-B71B-0BFD835C9E3576A2.jpg" alt="Zion" class="park-img" />
+  </div>
+
+  <div class="video-section" id="video">
+    <h2>Watch: Explore the Parks</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/N2LpzEuj9q0"
+      title="Explore National Parks" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="data-section" id="tableau">
+    <h2>Interactive: Most Visited US National Parks</h2>
+    <div class="tableauPlaceholder" id="viz1683882177289" style="position: relative">
+      <noscript>
+        <a href="#">
+          <img alt="Tableau Graph" src="https://public.tableau.com/static/images/Vi/VisitedNationalParks/Sheet1/1_rss.png" />
+        </a>
+      </noscript>
+      <object class="tableauViz" style="display:none;">
+        <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+        <param name="embed_code_version" value="3" />
+        <param name="site_root" value="" />
+        <param name="name" value="VisitedNationalParks/Sheet1" />
+        <param name="tabs" value="no" />
+        <param name="toolbar" value="yes" />
+      </object>
+    </div>
+    <script type="text/javascript">
+      var divElement = document.getElementById("viz1683882177289");
+      var vizElement = divElement.getElementsByTagName("object")[0];
+      vizElement.style.width = "100%";
+      vizElement.style.height = "600px";
+      var scriptElement = document.createElement("script");
+      scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+  </div>
+
+  <div class="footer">
+    <a href="#top">Back to top ↑</a> |
+    <a href="extra-page.html">Graduate Student Extra Page</a>
+  </div>
+</body>
+</html>

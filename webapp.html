@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pick-Up Line Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 400px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 25px;
+      background-color: #ff6f91;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff4e75;
+    }
+
+    .line {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pick-Up Line Generator</h1>
+  <div class="container">
+    <div id="step1">
+      <p>Who is it for?</p>
+      <button onclick="selectGender('girl')">Girl</button>
+      <button onclick="selectGender('boy')">Boy</button>
+    </div>
+
+    <div id="step2" class="hidden">
+      <p>Choose a category:</p>
+      <button onclick="selectCategory('cute')">Cute</button>
+      <button onclick="selectCategory('romantic')">Romantic</button>
+      <button onclick="selectCategory('funny')">Funny</button>
+      <button onclick="selectCategory('spicy')">Spicy</button>
+    </div>
+
+    <div class="line" id="line"></div>
+    <div id="another" class="hidden">
+      <button onclick="reset()">Generate Another</button>
+    </div>
+  </div>
+
+  <script>
+    let selectedGender = "";
+
+    const lines = {
+      girl: {
+        cute: [
+          "Are you a snowflake? Because you’re one of a kind.",
+          "You're like sunshine on a rainy day.",
+          "If I had a star for every time you brightened my day, I’d have a galaxy.",
+        ],
+        romantic: [
+          "You must be made of stardust, because my world lights up when you’re around.",
+          "I never believed in fate until I met you.",
+          "I didn’t know what perfect meant until I saw you smile.",
+        ],
+        funny: [
+          "Are you a keyboard? Because you’re just my type.",
+          "Are you made of sugar? Because you’re too sweet… and now I have a toothache.",
+          "You must be Wi-Fi, because I’m feeling a strong connection.",
+        ],
+        spicy: [
+          "Are you a campfire? Because you’re hot and I want s’more.",
+          "I must be a snowflake, because I’ve fallen for you... hard.",
+          "Do you believe in love at first sight, or should I walk by again in slow motion?",
+        ]
+      },
+      boy: {
+        cute: [
+          "If cuteness were a crime, you’d be serving a life sentence.",
+          "You're the peanut butter to my jelly.",
+          "You're so sweet, you give me a sugar rush.",
+        ],
+        romantic: [
+          "Every love song suddenly makes sense when I’m with you.",
+          "If kisses were stars, I’d give you the whole sky.",
+          "You’re the reason I believe in love at first sight.",
+        ],
+        funny: [
+          "Are you a loan from a bank? Because you have my interest!",
+          "Do you have a Band-Aid? I just scraped my knee falling for you.",
+          "If you were a vegetable, you’d be a cute-cumber.",
+        ],
+        spicy: [
+          "Are you an oven? Because you’re making things way too hot in here.",
+          "If I were a cat, I’d spend all 9 lives with you... preferably in bed.",
+          "Are you a magician? Because every time you walk by, everyone else disappears and my heart races.",
+        ]
+      }
+    };
+
+    function selectGender(gender) {
+      selectedGender = gender;
+      document.getElementById("step1").classList.add("hidden");
+      document.getElementById("step2").classList.remove("hidden");
+    }
+
+    function selectCategory(category) {
+      const list = lines[selectedGender][category];
+      const randomLine = list[Math.floor(Math.random() * list.length)];
+      document.getElementById("line").textContent = randomLine;
+      document.getElementById("step2").classList.add("hidden");
+      document.getElementById("another").classList.remove("hidden");
+    }
+
+    function reset() {
+      document.getElementById("line").textContent = "";
+      document.getElementById("another").classList.add("hidden");
+      document.getElementById("step1").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
